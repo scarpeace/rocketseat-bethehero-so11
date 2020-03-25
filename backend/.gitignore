@@ -1,1 +1,2 @@
+# Arquivo de configuração do GIT, ele lista os diretórios ou arquivos que devem ser ignorados ao tentar serem enviados para o repositório.
 node_modules
