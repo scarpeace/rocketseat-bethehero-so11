@@ -1,0 +1,5 @@
+* Instala o expo com 'yarn add global expo-cli'
+* Cria o projeto com 'expo init -nome do pojeto-
+* Roda o projeto com 'expo start'
+* Instala o React Navigation e as depedencias 'yarn add @react-navigation/latest'
+* Instala 'expo install expo-constants'
