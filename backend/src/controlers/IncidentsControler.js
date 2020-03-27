@@ -23,7 +23,7 @@ module.exports = {
     response.header('X-Total-Count', count['count(*)'])
     
     //retorna a resposta em formato JSON, que era o array. Tudo aquilo ali em cima virou um grande objeto.
-    return response.json({ incidents })
+    return response.json(incidents)
   },
 
   async create(request, response) {

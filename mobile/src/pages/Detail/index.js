@@ -9,9 +9,9 @@ import styles from "./styles";
 
 export default function Detail() {
   const navigation = useNavigation();
-  const rotes = useRoute();
+  const routes = useRoute();
 
-  const incident = route.params.incident;
+  const incident = routes.params.incident;
   const message = `Ola, ${
     incident.name
   }. Estou entrando em contato pois gostaria de ajudar no caso ${incident.title} com o valor de ${Intl.NumberFormat("pt-BR",{style:"currency",currency: "BRL"}).format(incident.value)}`;
@@ -29,7 +29,7 @@ export default function Detail() {
   }
 
   function sendWhatsApp() {
-    Linking.openURL(`whatsapp://send?phone=+55${incident.phone}&text=${message}`);
+    Linking.openURL(`whatsapp://send?phone=+55${incident.whatsapp}&text=${message}`);
   }
 
   return (

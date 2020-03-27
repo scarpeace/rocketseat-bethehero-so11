@@ -11,34 +11,35 @@ export default function Incidents() {
   const [incidents, setIncidents] = useState([]);
   const [total, setTotal] = useState(0);
   const [page, setPage] = useState(1);
-  const [loading, setLoading] = useState(false)
-  
+  const [loading, setLoading] = useState(false);
+
   const navigation = useNavigation();
 
   function navigateToDetail(incident) {
-    navigation.navigate("Detail",{incident});
+    navigation.navigate("Detail", { incident });
   }
 
   async function loadIncidents() {
-  
-    if(loading){
+    if (loading) {
       return;
     }
 
-    if(total > 0 && incidents.length === total){
-      return
+    if (total > 0 && incidents.length === total) {
+      return;
     }
 
     setLoading(true);
 
     const response = await api.get("incidents", {
-      params: {page}  
+      params: { page }
     });
 
-    setIncidents([...incidents, ...response.data]);
+    console.log(response.data)
+
+    setIncidents([...incidents,...response.data]);
     setTotal(response.headers["x-total-count"]);
-    setPage(page+1);
-    setLoading(false)
+    setPage(page + 1);
+    setLoading(false);
   }
 
   useEffect(() => {
@@ -59,10 +60,11 @@ export default function Incidents() {
       </Text>
 
       <FlatList
-        data={[incidents]}
+        data={incidents}
+        style={styles.incidentlist}
         keyExtractor={incident => String(incident.id)}
         showsVerticalScrollIndicator={false}
-        onEndReached ={loadIncidents}
+        onEndReached={loadIncidents}
         onEndReachedThreshold={0.2}
         renderItem={({ item: incident }) => (
           <View style={styles.incident}>
@@ -82,7 +84,7 @@ export default function Incidents() {
 
             <TouchableOpacity
               style={styles.detailsButton}
-              onPress={()=>navigateToDetail(incident)}
+              onPress={() => navigateToDetail(incident)}
             >
               <Text style={styles.detailsButtonText}>Ver mais detalhes</Text>
               <Feather name="arrow-right" size={16} color="#E02041" />
