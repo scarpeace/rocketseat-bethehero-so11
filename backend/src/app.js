@@ -1,6 +1,7 @@
 const express = require('express');
 const routes = require('./routes');
-const cors = require('cors')
+const cors = require('cors');
+const {errors} = require('celebrate')
 
 // Inicializando a instância do express pra lidar com as rotas de requests ao banco de dados.
 const app = express();
@@ -11,6 +12,8 @@ app.use(cors());
 app.use(express.json())
 // Arquivo externo de configuração de rotas do backend. Toda a documentação tá lá.
 app.use(routes)
+// Essa propriedade faz com que o sistema retorne os erros da validação do celebrate em um formato mais amigável(Json)
+app.use(errors())
 
 
 // Aqui eu defino a porta que meu aplicativo vai ficar rodando.

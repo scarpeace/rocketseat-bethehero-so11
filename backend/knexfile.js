@@ -19,6 +19,20 @@ module.exports = {
     //Eu esqueci o que isso faz, mas se eu for chutar: não sei.
     useNullAsDefault: true,
   },
+
+  test: {
+    client: 'sqlite3',
+    connection: {
+      //Arquivo que vai ser gerado após fazer as migrations
+      filename: './src/database/db.test'
+    },
+    migrations:{
+      //Diretório aonde vão ficar as migrations
+      directory:'./src/database/migrations'
+    },
+    //Eu esqueci o que isso faz, mas se eu for chutar: não sei.
+    useNullAsDefault: true,
+  },
  
   //Aqui são as configurações para desenvolvimento, mas voltadas para o processo de testes
   staging: {
