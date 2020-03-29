@@ -8,7 +8,8 @@ import "./styles.css"
 import logoImg from '../../assets/logo.svg'
 
 export default function NewIncident() {
-  
+
+// Hooks
 const [title, setTitle] = useState('')
 const [description, setDescription] = useState('')
 const [value, setValue] = useState('')
@@ -24,6 +25,9 @@ const history = useHistory()
       value
     }
 
+    // Try Catch pra exibir o errro no console.
+    // Aqui a gente tá passando a autorização dentro do Header que é o ID
+    // E a data que foi extraída do formulário a partir dos hooks
     try{
       await api.post('incidents', data,{
         headers: {
@@ -44,7 +48,7 @@ const history = useHistory()
           <h1>Cadastrar novo caso</h1>
           <p>Descreva o caso detalhadamente para encontrar um herói para resolver isso</p>
 
-          <Link className="back-link" to="/profile">
+          <Link className="back-link" to="/profile" style={{backgroundColor: '#FFF'}}>
             {/* TODO - Arrumar a cor desse icone aqui que tá destacando no fundo */}
             <FiArrowLeft size={16} color="##E02041" />
                 Voltar para Home

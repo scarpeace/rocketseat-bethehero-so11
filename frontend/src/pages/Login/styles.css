@@ -1,11 +1,14 @@
 .logon-container {
   width: 100%;
+  /* Largura máxima do elemento */
   max-width: 1120px;
+  /* VH = View Height */
   height: 100vh;
   margin: 0 auto;
 
   display: flex;
   align-items: center;
+  /* Esse flex direction fala se os itens deve ficar na horizontal ou na vertical */
   /* flex-direction: column; */
   justify-content: space-between;
 }
