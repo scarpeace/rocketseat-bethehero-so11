@@ -48,4 +48,4 @@ You can see the layout of this project at [this link](https://www.figma.com/file
 
 ---
 
-Feito com ♥ by Scarpellini :shipit: 
+Made with ♥ by Scarpellini :shipit: 
