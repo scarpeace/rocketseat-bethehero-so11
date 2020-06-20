@@ -40,9 +40,9 @@ You can see the layout of this project at [this link](https://www.figma.com/file
 ## 🤔 Contribute
 
 - Fork the repository;
-- Create a branch with your feature: `git checkout -b minha-feature`;
-- Commit your changes: `git commit -m 'feat: Minha nova feature'`;
-- Push it to your branch: `git push origin minha-feature`.
+- Create a branch with your feature: `git checkout -b my-feature`;
+- Commit your changes: `git commit -m 'feat: My new feature'`;
+- Push it to your branch: `git push origin my-feature`.
 
 - After the PR is done you can delete your branch.
 
